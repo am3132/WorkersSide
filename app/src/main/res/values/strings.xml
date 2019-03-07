@@ -10,4 +10,5 @@
     <string name="side_title">Side:</string>
     <string name="drink_title">Drink:</string>
     <string name="meal_to_prepare_title">Meal to Prepare</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
