@@ -36,7 +36,7 @@ public class BarcodeScanner extends AppCompatActivity {
 
         barcodeDetector = new BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.QR_CODE).build();
 
-        cameraSource = new CameraSource.Builder(this.barcodeDetector).setRequestedPreviewSize(640, 480).build();
+        cameraSource = new CameraSource.Builder(getApplicationContext(), this.barcodeDetector).setRequestedPreviewSize(640,480).build();
 
         surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
