@@ -22,7 +22,8 @@
             android:text="@string/main_page_title"
             android:textSize="40sp"
             android:gravity="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_light"/>
 
         <Button
             android:id="@+id/to_prepare_page_button"
@@ -34,6 +35,7 @@
             android:textSize="25sp"
             android:layout_gravity="center"
             android:layout_margin="50dp"
+            android:fontFamily="@font/montserrat_light"
             />
 
         <Button
@@ -46,6 +48,7 @@
             android:textSize="25sp"
             android:layout_gravity="center"
             android:layout_margin="50dp"
+            android:fontFamily="@font/montserrat_light"
             />
     </LinearLayout>
 
