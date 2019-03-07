@@ -5,12 +5,13 @@
     <string name="photo_column">Photo</string>
     <string name="description_column">Description</string>
     <string name="scan_collection_qr_code">Scan Collection QR Code</string>
-
     <string name="buttons_meals_for_prep">READY</string>
     <string name="main_title">Main:</string>
     <string name="side_title">Side:</string>
     <string name="drink_title">Drink:</string>
     <string name="meal_to_prepare_title">Meal to Prepare</string>
     <string name="title_activity_main">MainActivity</string>
-
+    <string name="main_page_title">Meal Deals</string>
+    <string name="to_prepare_page">Prepared Meals</string>
+    <string name="to_collect_page">Ready To Collect</string>
 </resources>
