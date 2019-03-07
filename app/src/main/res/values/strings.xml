@@ -14,4 +14,6 @@
     <string name="main_page_title">Meal Deals</string>
     <string name="to_prepare_page">Prepared Meals</string>
     <string name="to_collect_page">Ready To Collect</string>
+    <string name="please_focus_on_qr_code">Please focus on QR code</string>
+    <string name="qr_code_scanner">QR Code Scanner</string>
 </resources>
