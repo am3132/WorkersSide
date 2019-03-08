@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btn = findViewById(R.id.to_prepare_page_button);
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button btn2 = findViewById(R.id.to_collect_page_button);
-
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btn3 = findViewById(R.id.collected_button);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MealCollected.class));
+            }
+        });
     }
 
 }

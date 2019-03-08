@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">workersSide</string>
+    <string name="app_name">MealDealed Fresh</string>
     <string name="meals_for_collection_title">Meals For Collection</string>
     <string name="next">Next</string>
     <string name="photo_column">Photo</string>
@@ -11,9 +11,10 @@
     <string name="drink_title">Drink:</string>
     <string name="meal_to_prepare_title">Meal to Prepare</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="main_page_title">Meal Deals</string>
-    <string name="to_prepare_page">Prepared Meals</string>
+    <string name="main_page_title">MealDealed  @Fresh </string>
+    <string name="to_prepare_page">To Prepare</string>
     <string name="to_collect_page">Ready To Collect</string>
     <string name="please_focus_on_qr_code">Please focus on QR code</string>
     <string name="qr_code_scanner">QR Code Scanner</string>
+    <string name="collected">Collected</string>
 </resources>
