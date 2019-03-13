@@ -68,7 +68,7 @@ public class MealAdapter extends BaseAdapter {
             sideText.setText(mContext.getString(meal.getSide()));
 
             imageViewFavorite.setImageResource(
-                meal.getIsFavorite() ? R.drawable.tick : R.drawable.sablier);
+                meal.getIsFavorite() ? R.drawable.tick : R.drawable.hourglass);
 
             return convertView;
         }

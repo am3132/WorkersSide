@@ -1,14 +1,14 @@
 package com.example.workersside;
 
 public class Meal {
-        private final int main;
-        private final int drink;
-        private final int side;
+        private  String main;
+        private  String drink;
+        private  String side;
        // private final int imageResource;
         private boolean isFavorite = false;
       //  private final String imageUrl;
 
-        public Meal(int main, int drink,int side) {
+        public Meal(String main, String drink,String side) {
             this.main = main;
             this.drink = drink;
             this.side = side;
@@ -16,14 +16,26 @@ public class Meal {
            // this.imageUrl =imageURL;
         }
 
-        public int getMain() {
+
+        public void setMain(String main){
+            this.main =main;
+        }
+        public void setDrink(String drink){
+            this.drink=drink;
+
+        }
+        public void setSide(String side){
+            this.side = side;
+        }
+
+        public String getMain() {
             return main;
         }
 
-        public int getDrink() {
+        public String getDrink() {
             return drink;
         }
-        public int getSide(){
+        public String getSide(){
             return side;
         }
 
