@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".BarcodeScanner"></activity>
         <activity android:name=".MealsForCollection" />
+        <activity android:name=".MealsForPreparation"></activity>
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
