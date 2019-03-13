@@ -17,4 +17,11 @@
     <string name="please_focus_on_qr_code">Please focus on QR code</string>
     <string name="qr_code_scanner">QR Code Scanner</string>
     <string name="collected">Collected</string>
+    <string name="prawn_mayo">Prawn Mayo</string>
+    <string name="BLT">BLT</string>
+    <string name="All_day_breakfast">All Day Breakfast</string>
+    <string name="sprite">Sprite50cl</string>
+    <string name="buxton">Buxton1L</string>
+    <string name="coca">Coca33cl</string>
+    <string name="crisps">crisps</string>
 </resources>
