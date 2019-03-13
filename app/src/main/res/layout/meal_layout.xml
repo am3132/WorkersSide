@@ -21,6 +21,12 @@
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
             app:srcCompat="@mipmap/ic_launcher" />
+        <ImageView
+            android:id="@+id/imageview_ready"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/tick"
+            android:layout_gravity="bottom|right"/>
 
     </FrameLayout>
 

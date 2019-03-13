@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MealAdapter extends BaseAdapter {
@@ -13,10 +14,12 @@ public class MealAdapter extends BaseAdapter {
     private final Context mContext;
 
 
+
     public MealAdapter(Context mContext, Meal[] meals){
 
         this.meals = meals;
         this.mContext = mContext;
+
     }
 
 
@@ -36,6 +39,8 @@ public class MealAdapter extends BaseAdapter {
         return 0;
     }
 
+
+
     @Override
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -49,10 +54,11 @@ public class MealAdapter extends BaseAdapter {
             }
 
             // 3
-           // final ImageView imageView = (ImageView)convertView.findViewById(R.id.imageview_cover_art);
+            //final ImageView imageView = (ImageView)convertView.findViewById(R.id.imageview_cover_art);
             final TextView mainText = convertView.findViewById(R.id.textview_main_name);
             final TextView drinkText = convertView.findViewById(R.id.textview_drink_name);
             final TextView sideText = convertView.findViewById(R.id.textview_side_name);
+            final ImageView imageViewFavorite = (ImageView)convertView.findViewById(R.id.imageview_ready);
 
 
             // 4
@@ -60,6 +66,9 @@ public class MealAdapter extends BaseAdapter {
             mainText.setText(mContext.getString(meal.getMain()));
             drinkText.setText(mContext.getString(meal.getDrink()));
             sideText.setText(mContext.getString(meal.getSide()));
+
+            imageViewFavorite.setImageResource(
+                meal.getIsFavorite() ? R.drawable.tick : R.drawable.sablier);
 
             return convertView;
         }
