@@ -22,8 +22,6 @@
             android:scaleType="centerCrop"
             app:srcCompat="@mipmap/ic_launcher" />
 
-
-
     </FrameLayout>
 
     <TextView
@@ -33,11 +31,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:gravity="center_horizontal"
-        android:paddingLeft="8dp"
-        android:paddingTop="4dp"
-        android:paddingRight="8dp"
         android:textSize="12sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/frameLayout"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/main_title" />
@@ -50,9 +46,11 @@
         android:layout_marginLeft="8dp"
         android:gravity="center_horizontal"
         android:textSize="12sp"
+        android:textColor="@color/black"
+        android:text="Side:"
         app:layout_constraintStart_toEndOf="@+id/frameLayout"
         app:layout_constraintTop_toBottomOf="@+id/textview_main_name"
-        tools:text="@string/side_title" />
+        />
 
     <TextView
         android:id="@+id/textview_drink_name"
@@ -61,6 +59,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:text="@string/drink_title"
+        android:textSize="12sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/frameLayout"
         app:layout_constraintTop_toBottomOf="@+id/textview_side_name" />
 </android.support.constraint.ConstraintLayout>
