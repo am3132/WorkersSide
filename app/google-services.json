@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "1023655402915",
+    "firebase_url": "https://mealdealed.firebaseio.com",
+    "project_id": "mealdealed",
+    "storage_bucket": "mealdealed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023655402915:android:e1758f8b34a163a7",
+        "android_client_info": {
+          "package_name": "com.example.workersside"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023655402915-108ahiehtdgso0nnrcang3m0trvei35s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.workersside",
+            "certificate_hash": "c27b0dace4abd881a31076cdb51f4bf24d49b398"
+          }
+        },
+        {
+          "client_id": "1023655402915-caai54mduupn923kik6c1lbs25u7atqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe4YjLRyeepurGWuyt9V9OW184zxoOQJM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023655402915-caai54mduupn923kik6c1lbs25u7atqo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1023655402915-rnte9h094eo0ip24k4o1eibanlvjtkb6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.willtaylor.MealDealed"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
