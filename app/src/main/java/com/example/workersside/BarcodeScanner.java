@@ -36,13 +36,13 @@ public class BarcodeScanner extends AppCompatActivity {
 
         barcodeDetector = new BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.QR_CODE).build();
 
-        cameraSource = new CameraSource.Builder(this.barcodeDetector).setRequestedPreviewSize(640, 480).build();
+        cameraSource = new CameraSource.Builder(getApplicationContext(), this.barcodeDetector).setRequestedPreviewSize(640,480).build();
 
         surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
-            public void surfaceCreated(SurfaceHolder surfaceHolder) {
+            public void surfaceCreated(SurfaceHolder holder) {
 
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                     return;
                 }
                 try
@@ -77,7 +77,7 @@ public class BarcodeScanner extends AppCompatActivity {
             public void receiveDetections(Detector.Detections<Barcode> detections) {
                 final SparseArray<Barcode> qrCodes = detections.getDetectedItems();
 
-                if(qrCodes.size() != 0){
+                if(qrCodes.size() != 0) {
                     textView.post(new Runnable() {
                         @Override
                         public void run() {
@@ -85,12 +85,12 @@ public class BarcodeScanner extends AppCompatActivity {
                             vibrator.vibrate(1000);
                             textView.setText(qrCodes.valueAt(0).displayValue);
                         }
-                    })
+                    });
+                }
             }
         });
 
-        }
-
-
     }
+
+
 }

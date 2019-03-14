@@ -22,7 +22,7 @@
         android:layout_below="@+id/camerapreview"
         android:layout_marginTop="130dp"
         android:layout_marginBottom="113dp"
-        android:text="@string/please_focus_on_qr_code"
+        android:text="Please_focus_on_qr_code"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

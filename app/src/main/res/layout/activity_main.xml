@@ -22,7 +22,8 @@
             android:text="@string/main_page_title"
             android:textSize="40sp"
             android:gravity="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_light"/>
 
         <Button
             android:id="@+id/to_prepare_page_button"
@@ -33,7 +34,8 @@
             android:background="@color/white"
             android:textSize="25sp"
             android:layout_gravity="center"
-            android:layout_margin="50dp"
+            android:layout_margin="30dp"
+            android:fontFamily="@font/montserrat_light"
             />
 
         <Button
@@ -45,7 +47,21 @@
             android:background="@color/white"
             android:textSize="25sp"
             android:layout_gravity="center"
-            android:layout_margin="50dp"
+            android:layout_margin="30dp"
+            android:fontFamily="@font/montserrat_light"
+            />
+
+        <Button
+            android:id="@+id/collected_button"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:text="@string/collected"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:fontFamily="@font/montserrat_light"
             />
     </LinearLayout>
 
