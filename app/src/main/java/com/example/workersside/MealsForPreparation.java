@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -34,6 +35,9 @@ public class MealsForPreparation extends AppCompatActivity {
     }
 
     private void loadDataFromFirebase() {
+
+        if(mealArrayList.size()>0)
+            mealArrayList.clear();
         db.collection("orders")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -46,8 +50,14 @@ public class MealsForPreparation extends AppCompatActivity {
                         adapter = new MyRecyclerViewAdapter(MealsForPreparation.this,mealArrayList);
                         mRecyclerView.setAdapter(adapter);
                     }
-                });
-
+                })
+            .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(MealsForPreparation.this,"Problem --1--",Toast.LENGTH_LONG).show();
+                    Log.w("--1--",e.getMessage());
+                }
+            });
     }
 
 
