@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BarcodeScanner">
+    tools:context=".BarcodeScanner"
+    android:background="#f9ca6b">
 
     <SurfaceView
         android:id="@+id/camerapreview"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="380dp"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="188dp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -22,8 +23,9 @@
         android:layout_below="@+id/camerapreview"
         android:layout_marginTop="130dp"
         android:layout_marginBottom="113dp"
-        android:text="Please_focus_on_qr_code"
+        android:text="@string/please_focus_on_qr_code"
         android:gravity="center"
+        app:fontFamily="@font/montserrat_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,11 +41,14 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="75dp"
+        android:gravity="center"
         android:text="@string/qr_code_scanner"
         android:textSize="30sp"
-        android:gravity="center"
+        app:fontFamily="@font/montserrat_light"
         app:layout_constraintBottom_toTopOf="@+id/camerapreview"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>

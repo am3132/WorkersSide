@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MealsForCollection">
+    tools:context=".MealsForCollection"
+    android:background="#f9ca6b">
 
     <TextView
         android:id="@+id/collectionTitle"
@@ -17,7 +18,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/meals_for_collection_title"
-        android:textSize="30sp"
+        android:textSize="24sp"
+        app:fontFamily="@font/montserrat_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.04"
@@ -36,6 +38,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="600dp"
         android:text="@string/next"
+        android:textColor="@color/black"
+        app:fontFamily="@font/montserrat_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.96"
@@ -72,11 +76,13 @@
 
                 <TextView
                     android:text="@string/photo_column"
-                    android:textSize="50sp" />
+                    android:textSize="50sp"
+                    app:fontFamily="@font/montserrat_light" />
 
                 <TextView
                     android:text="@string/description_column"
-                    android:textSize="50sp" />
+                    android:textSize="50sp"
+                    app:fontFamily="@font/montserrat_light" />
 
             </TableRow>
 
@@ -93,6 +99,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/scan_collection_qr_code"
+        android:textColor="@color/black"
+        app:fontFamily="@font/montserrat_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
