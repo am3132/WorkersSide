@@ -1,49 +1,64 @@
 package com.example.workersside;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.GridView;
-import android.widget.ListView;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.widget.Toast;
 
-import com.firebase.client.Firebase;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class MealsForPreparation extends AppCompatActivity {
 
-
-    Firebase mRef = new Firebase("https://mealdealed.firebaseio.com/orders");
-
-   ArrayList<String> mItems = new ArrayList<>();
-   ArrayAdapter mAdapter;
-   ListView mListView;
+    FirebaseFirestore db;
+    RecyclerView mRecyclerView;
+    ArrayList<Meal> mealArrayList;
+    MyRecyclerViewAdapter adapter;
 
 
+    protected void onCreate(Bundle SavedInstanceState) {
+        super.onCreate(SavedInstanceState);
+        mealArrayList = new ArrayList<>();
+        setUpRecyclerView();
+        setUpFireBase();
+        loadDataFromFirebase();
+    }
 
-
-
-
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_meals_for_preparation);
-
-       // mListView = ((ListView) findViewById(R.id.ListView));
+    private void loadDataFromFirebase() {
+        db.collection("orders")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        for(DocumentSnapshot querySnapshot: task.getResult()){
+                            Meal meal = new Meal(querySnapshot.getString("main"),querySnapshot.getString("side"),querySnapshot.getString("drinnk"));
+                            mealArrayList.add(meal);
+                        }
+                        adapter = new MyRecyclerViewAdapter(MealsForPreparation.this,mealArrayList);
+                        mRecyclerView.setAdapter(adapter);
+                    }
+                });
 
     }
 
-    protected void onStart() {
-        super.onStart();
 
-   mListView.setAdapter(mAdapter);
+    private void setUpFireBase() {
+        db = FirebaseFirestore.getInstance();
     }
-    private Meal[] meals = {
-        new Meal(R.string.All_day_breakfast,R.string.sprite,R.string.crisps),
-        new Meal(R.string.prawn_mayo,R.string.coca,R.string.crisps),
-        new Meal(R.string.BLT,R.string.buxton,R.string.crisps)
-    };
+
+    private void setUpRecyclerView() {
+        mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
 }
