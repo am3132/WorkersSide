@@ -14,7 +14,6 @@
     <string name="main_page_title">MealDealed  @Fresh </string>
     <string name="to_prepare_page">To Prepare</string>
     <string name="to_collect_page">Ready To Collect</string>
-    <string name="please_focus_on_qr_code">Please focus on QR code</string>
     <string name="qr_code_scanner">QR Code Scanner</string>
     <string name="collected">Collected</string>
     <string name="prawn_mayo">Prawn Mayo</string>
@@ -28,4 +27,5 @@
     <string name="drink">DRINK</string>
     <string name="main">MAIN</string>
     <string name="side">SIDE</string>
+    <string name="please_focus_on_qr_code">Please focus on QR code</string>
 </resources>
