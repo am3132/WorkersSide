@@ -15,12 +15,6 @@
         android:orientation="vertical"
         android:padding="50dp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            app:srcCompat="@drawable/logo_transparent_background" />
-
         <Button
             android:id="@+id/to_prepare_page_button"
             android:layout_width="200dp"

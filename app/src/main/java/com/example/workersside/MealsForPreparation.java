@@ -29,6 +29,7 @@ public class MealsForPreparation extends AppCompatActivity {
     protected void onCreate(Bundle SavedInstanceState) {
         super.onCreate(SavedInstanceState);
         mealArrayList = new ArrayList<>();
+        setContentView(R.layout.activity_meals_for_preparation);
         setUpRecyclerView();
         setUpFireBase();
         loadDataFromFirebase();
@@ -66,7 +67,7 @@ public class MealsForPreparation extends AppCompatActivity {
     }
 
     private void setUpRecyclerView() {
-        mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerView = findViewById(R.id.mRecyclerView);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
