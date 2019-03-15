@@ -45,7 +45,7 @@ public class MealsForPreparation extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         for(DocumentSnapshot querySnapshot: task.getResult()){
-                            Meal meal = new Meal(querySnapshot.getString("main"),querySnapshot.getString("side"),querySnapshot.getString("drinnk"));
+                            Meal meal = new Meal(querySnapshot.getString("main"),querySnapshot.getString("snack"),querySnapshot.getString("drink"));
                             mealArrayList.add(meal);
                         }
                         adapter = new MyRecyclerViewAdapter(MealsForPreparation.this,mealArrayList);
@@ -59,6 +59,10 @@ public class MealsForPreparation extends AppCompatActivity {
                     Log.w("--1--",e.getMessage());
                 }
             });
+
+        for(int i =0; i < mealArrayList.size(); i++){
+            Log.d("Data", mealArrayList.get(i).toString());
+        }
     }
 
 
