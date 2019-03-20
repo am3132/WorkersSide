@@ -4,16 +4,15 @@ public class Meal {
         private  String main;
         private  String drink;
         private  String side;
-       // private final int imageResource;
-        private boolean isFavorite = false;
-      //  private final String imageUrl;
+        private String userId;
 
-        public Meal(String main, String drink,String side) {
+
+        public Meal(String main, String drink,String side,String userID) {
             this.main = main;
             this.drink = drink;
             this.side = side;
-           // this.imageResource =imageResource;
-           // this.imageUrl =imageURL;
+            setUserId(userID);
+
         }
 
 
@@ -39,21 +38,11 @@ public class Meal {
             return side;
         }
 
-   /* public int getImageResource() {
-        return imageResource;
-    }
-*/
-    public boolean getIsFavorite() {
-        return isFavorite;
-    }
-    public void setIsFavorite(boolean isFavorite) {
-        this.isFavorite = isFavorite;
+    public String getUserId() {
+        return userId;
     }
 
-    public void toggleFavorite() {
-        isFavorite = !isFavorite;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
-   /* public String getImageUrl(){
-        return imageUrl;
-    }*/
 }

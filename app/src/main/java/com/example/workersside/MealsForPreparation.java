@@ -35,7 +35,7 @@ public class MealsForPreparation extends AppCompatActivity {
         loadDataFromFirebase();
     }
 
-    private void loadDataFromFirebase() {
+    public void loadDataFromFirebase() {
 
         if(mealArrayList.size()>0)
             mealArrayList.clear();
@@ -45,7 +45,11 @@ public class MealsForPreparation extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         for(DocumentSnapshot querySnapshot: task.getResult()){
-                            Meal meal = new Meal(querySnapshot.getString("main"),querySnapshot.getString("snack"),querySnapshot.getString("drink"));
+                            Meal meal = new Meal(
+                                    querySnapshot.getId(),
+                                    querySnapshot.getString("main"),
+                                    querySnapshot.getString("snack"),
+                                    querySnapshot.getString("drink"));
                             mealArrayList.add(meal);
                         }
                         adapter = new MyRecyclerViewAdapter(MealsForPreparation.this,mealArrayList);
@@ -75,5 +79,6 @@ public class MealsForPreparation extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
+
 
 }

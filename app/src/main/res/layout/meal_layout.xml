@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:gravity="center">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -20,12 +20,6 @@
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
             app:srcCompat="@mipmap/ic_launcher" />
-        <ImageView
-            android:id="@+id/imageview_ready"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:src="@drawable/tick"
-            android:layout_gravity="bottom|right"/>
 
     </FrameLayout>
 
@@ -35,11 +29,11 @@
         android:layout_height="19dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:fontFamily="@font/montserrat_light"
         android:gravity="center_horizontal"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:fontFamily="@font/montserrat_light"
         app:layout_constraintStart_toEndOf="@+id/frameLayout"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/main_title" />
@@ -50,14 +44,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:gravity="center_horizontal"
-        android:textSize="16sp"
-        android:textColor="@color/black"
         android:fontFamily="@font/montserrat_light"
+        android:gravity="center_horizontal"
         android:text="Snack:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/frameLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textview_main_name"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/textview_main_name" />
 
     <TextView
         android:id="@+id/textview_drink_name"
@@ -65,10 +58,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:text="@string/drink_title"
-        android:textSize="16sp"
-        android:textColor="@color/black"
         android:fontFamily="@font/montserrat_light"
+        android:text="@string/drink_title"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/frameLayout"
         app:layout_constraintTop_toBottomOf="@+id/textview_side_name" />
+
+    <Button
+        android:id="@+id/button_meal_to_prepare"
+        android:layout_width="57dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/tick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
