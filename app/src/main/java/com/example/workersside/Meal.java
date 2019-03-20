@@ -7,11 +7,12 @@ public class Meal {
         private String userId;
 
 
-        public Meal(String main, String drink,String side,String userID) {
+        public Meal(String userID, String main, String drink,String side) {
+            setUserId(userID);
             this.main = main;
             this.drink = drink;
             this.side = side;
-            setUserId(userID);
+
 
         }
 
