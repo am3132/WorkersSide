@@ -13,11 +13,15 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHodler> {
 
     MealsForPreparation mealsForPreparation;
     ArrayList<Meal> mealArrayList;
+
 
 
     public MyRecyclerViewAdapter(MealsForPreparation mealsForPreparation, ArrayList<Meal> mealArrayList){
@@ -41,6 +45,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
         holder.mMain.setText(mealArrayList.get(position).getMain());
         holder.mSide.setText(mealArrayList.get(position).getSide());
         holder.mDrink.setText(mealArrayList.get(position).getDrink());
+
         holder.mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,15 +60,21 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
         return mealArrayList.size();
     }
     private void addMealToCollectionDatabase(int position){
+
+        Map<String,String> dataMap = new HashMap<>();
+        dataMap.put("CustomerUniID",mealArrayList.get(position).getUserId());
+        dataMap.put("Main",mealArrayList.get(position).getMain());
+        dataMap.put("Drink",mealArrayList.get(position).getDrink());
+        dataMap.put("Side",mealArrayList.get(position).getSide());
         mealsForPreparation.db.collection("collection")
-                .add(position)
+                .add(dataMap)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(mealsForPreparation.getBaseContext(),"Added Succesfully",Toast.LENGTH_SHORT).show();
-                        mealsForPreparation.loadDataFromFirebase();
-                    }
-                })
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Toast.makeText(mealsForPreparation.getBaseContext(),"Added Succesfully",Toast.LENGTH_SHORT).show();
+                mealsForPreparation.loadDataFromFirebase();
+            }
+        })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {

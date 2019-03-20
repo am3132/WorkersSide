@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +26,7 @@ public class MealsForPreparation extends AppCompatActivity {
     RecyclerView mRecyclerView;
     ArrayList<Meal> mealArrayList;
     MyRecyclerViewAdapter adapter;
+    Button updateButton;
 
 
     protected void onCreate(Bundle SavedInstanceState) {
@@ -33,7 +36,20 @@ public class MealsForPreparation extends AppCompatActivity {
         setUpRecyclerView();
         setUpFireBase();
         loadDataFromFirebase();
+        setUpUpdateButton();
+
     }
+
+    private void setUpUpdateButton() {
+        updateButton = findViewById(R.id.mUpdateButton);
+        updateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadDataFromFirebase();
+            }
+        });
+    }
+
 
     public void loadDataFromFirebase() {
 
