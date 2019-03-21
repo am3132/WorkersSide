@@ -15,7 +15,6 @@ import com.google.firebase.firestore.DocumentReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHodler> {
 
@@ -66,7 +65,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
         dataMap.put("Drink",mealArrayList.get(position).getDrink());
         dataMap.put("Main",mealArrayList.get(position).getMain());
         dataMap.put("Side",mealArrayList.get(position).getSide());
-        mealsForPreparation.db.collection("collection")
+        mealsForPreparation.db.collection("ReadyToCollect")
                 .add(dataMap)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override

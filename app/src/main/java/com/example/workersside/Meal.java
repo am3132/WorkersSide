@@ -5,6 +5,7 @@ public class Meal {
         private  String drink;
         private  String side;
         private String userId;
+        private boolean readyForCollection;
 
 
         public Meal(String userID, String main, String drink,String side) {
@@ -17,7 +18,8 @@ public class Meal {
         }
 
 
-        public void setMain(String main){
+
+    public void setMain(String main){
             this.main =main;
         }
         public void setDrink(String drink){
