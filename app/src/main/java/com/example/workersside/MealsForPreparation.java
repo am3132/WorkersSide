@@ -62,7 +62,7 @@ public class MealsForPreparation extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         for(DocumentSnapshot querySnapshot: task.getResult()){
                             Meal meal = new Meal(
-                                    querySnapshot.getId(),
+                                    querySnapshot.getString("CustomerUniID"),
                                     querySnapshot.getString("main"),
                                     querySnapshot.getString("snack"),
                                     querySnapshot.getString("drink"));

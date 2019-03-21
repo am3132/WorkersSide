@@ -66,6 +66,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
         dataMap.put("Main",mealArrayList.get(position).getMain());
         dataMap.put("Side",mealArrayList.get(position).getSide());
         mealsForPreparation.db.collection("ReadyToCollect")
+
                 .add(dataMap)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override

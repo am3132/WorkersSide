@@ -9,7 +9,8 @@ public class Meal {
 
 
         public Meal(String userID, String main, String drink,String side) {
-            setUserId(userID);
+            this.userId = userID;
+            //setUserId(userID);
             this.main = main;
             this.drink = drink;
             this.side = side;
