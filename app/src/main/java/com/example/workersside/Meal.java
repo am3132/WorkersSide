@@ -4,12 +4,12 @@ public class Meal {
         private  String main;
         private  String drink;
         private  String side;
-        private String CustomerUniId;
+        private String userName;
         private boolean readyForCollection;
 
 
-        public Meal(String CustomerUniId, String main, String drink,String side) {
-            this.CustomerUniId = CustomerUniId;
+        public Meal(String userName, String main, String drink,String side) {
+            this.userName = userName;
             //setUserId(userID);
             this.main = main;
             this.drink = drink;
@@ -42,11 +42,11 @@ public class Meal {
             return side;
         }
 
-    public String getCustomerUniId() {
-        return CustomerUniId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setCustomerUniId(String CustomerUniId) {
-        this.CustomerUniId = CustomerUniId;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

@@ -61,7 +61,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
     private void addMealToCollectionDatabase(int position){
 
         Map<String,String> dataMap = new HashMap<>();
-        dataMap.put("CustomerUniId",mealArrayList.get(position).getCustomerUniId());
+        dataMap.put("CustomerUniId",mealArrayList.get(position).getUserName());
         dataMap.put("Drink",mealArrayList.get(position).getDrink());
         dataMap.put("Main",mealArrayList.get(position).getMain());
         dataMap.put("Side",mealArrayList.get(position).getSide());
@@ -85,7 +85,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
     }
     private void deleteFromMealToPrepareDatabase(int position){
         mealsForPreparation.db.collection("orders")
-                .document(mealArrayList.get(position).getCustomerUniId())
+                .document(mealArrayList.get(position).getUserName())
                 .delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
