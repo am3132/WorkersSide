@@ -55,7 +55,7 @@ public class MealsForPreparation extends AppCompatActivity {
 
         if(mealArrayList.size()>0)
             mealArrayList.clear();
-        db.collection("orders")
+            db.collection("orders")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

@@ -5,7 +5,6 @@ public class Meal {
         private  String drink;
         private  String side;
         private String userName;
-        private boolean readyForCollection;
 
 
         public Meal(String userName, String main, String drink,String side) {
