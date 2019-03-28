@@ -10,7 +10,7 @@
     <SurfaceView
         android:id="@+id/camerapreview"
         android:layout_width="match_parent"
-        android:layout_height="380dp"
+        android:layout_height="600dp"
         android:layout_centerInParent="true"
         android:layout_marginBottom="188dp"
         app:layout_constraintBottom_toBottomOf="parent"

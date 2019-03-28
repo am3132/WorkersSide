@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">MealDealed Fresh</string>
-    <string name="meals_for_collection_title">Meals For Collection</string>
     <string name="next">Next</string>
     <string name="photo_column">Photo</string>
     <string name="description_column">Description</string>
@@ -29,5 +28,6 @@
     <string name="side">SIDE</string>
     <string name="please_focus_on_qr_code">Please focus on QR code</string>
     <string name="updateBtn">Update</string>
-
+    <string name="update">Update</string>
+    <string name="meals_for_collection">Meals for Collection</string>
 </resources>

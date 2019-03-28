@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MealsForCollection"
-    android:background="@color/dark_green">
+    android:background="#f9ca6b"
+    android:orientation="vertical"
+    tools:context=".MealsForCollection">
+
 
     <TextView
         android:id="@+id/collectionTitle"
@@ -13,19 +14,34 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/meals_for_collection_title"
-        android:textSize="24sp"
-        app:fontFamily="@font/montserrat_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/montserrat_light"
+        android:text="@string/meals_for_collection"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/collectionUpdateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/updateBtn" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/collectionRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/to_barcode_scanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/scan_collection_qr_code"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat_light"
+        tools:id="@id/to_barcode_scanner" />
 
     <Button
         android:id="@+id/nextToCollected"
@@ -38,74 +54,21 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="600dp"
         android:text="@string/next"
-        android:textColor="@color/white"
-        app:fontFamily="@font/montserrat_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.96"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat_light"
         tools:height="15dp"
         tools:width="100dp" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="395dp"
-        android:layout_height="564dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/collectionTitle">
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="17dp"
-            tools:layout_editor_absoluteY="68dp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:text="@string/photo_column"
-                    android:textSize="50sp"
-                    app:fontFamily="@font/montserrat_light" />
-
-                <TextView
-                    android:text="@string/description_column"
-                    android:textSize="50sp"
-                    app:fontFamily="@font/montserrat_light" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+</LinearLayout>
 
 
-        </TableLayout>
-    </ScrollView>
-
-    <Button
-        android:id="@+id/to_barcode_scanner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/scan_collection_qr_code"
-        android:textColor="@color/white"
-        app:fontFamily="@font/montserrat_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        tools:id="@id/to_barcode_scanner" />
 
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+
+
+
+
+
