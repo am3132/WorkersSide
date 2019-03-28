@@ -18,8 +18,8 @@ import java.util.Map;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHodler> {
 
-    MealsForPreparation mealsForPreparation;
-    ArrayList<Meal> mealArrayList;
+    private MealsForPreparation mealsForPreparation;
+    private ArrayList<Meal> mealArrayList;
 
 
 

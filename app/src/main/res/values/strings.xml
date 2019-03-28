@@ -28,4 +28,6 @@
     <string name="main">MAIN</string>
     <string name="side">SIDE</string>
     <string name="please_focus_on_qr_code">Please focus on QR code</string>
+    <string name="updateBtn">Update</string>
+
 </resources>

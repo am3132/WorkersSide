@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/dark_green"
     tools:context=".MealCollected">
 
 
@@ -22,15 +22,15 @@
             android:layout_marginBottom="15dp"
             android:layout_gravity="center"
             android:fontFamily="@font/montserrat_light"
-            android:text="Meals Collected"
-            android:textColor="@color/black"
+            android:text="@string/meal_collected"
+            android:textColor="@color/white"
             android:textSize="30sp" />
 
         <Button
             android:id="@+id/mUpdateButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update" />
+            android:text="@string/updateBtn" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/mRecyclerView2"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MealsForCollection"
-    android:background="#f9ca6b">
+    android:background="@color/dark_green">
 
     <TextView
         android:id="@+id/collectionTitle"
@@ -38,7 +38,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="600dp"
         android:text="@string/next"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:fontFamily="@font/montserrat_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/scan_collection_qr_code"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:fontFamily="@font/montserrat_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
