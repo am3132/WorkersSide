@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_green"
+    android:background="@color/white"
     tools:context=".MealCollected">
 
 
@@ -23,14 +22,18 @@
             android:layout_gravity="center"
             android:fontFamily="@font/montserrat_light"
             android:text="@string/meal_collected"
-            android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textColor="@color/black"
+            android:textSize="40sp" />
 
         <Button
             android:id="@+id/mUpdateButton2"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/updateBtn" />
+            android:layout_gravity="center"
+            android:background="@color/light_orange_background"
+            android:textColor="@color/black"
+            android:text="@string/updateBtn"
+            android:textSize="20sp"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/mRecyclerView2"

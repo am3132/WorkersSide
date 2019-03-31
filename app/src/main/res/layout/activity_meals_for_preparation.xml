@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_green"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".MealsForPreparation">
 
@@ -18,14 +18,17 @@
         android:layout_gravity="center"
         android:fontFamily="@font/montserrat_light"
         android:text="@string/meal_to_prepare_title"
-        android:textColor="@color/white"
-        android:textSize="30sp" />
+        android:textColor="@color/black"
+        android:textSize="40sp" />
 
     <Button
         android:id="@+id/mUpdateButton"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="@string/updateBtn" />
+        android:layout_gravity="center"
+        android:background="@color/light_orange_background"
+        android:text="@string/updateBtn"
+        android:textSize="20sp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mRecyclerView"
