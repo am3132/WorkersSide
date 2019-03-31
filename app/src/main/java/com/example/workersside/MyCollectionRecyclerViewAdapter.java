@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MyCollectionRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHodler> {
+public class MyCollectionRecyclerViewAdapter extends RecyclerView.Adapter<MyCollectionRecyclerViewHolder> {
     private MealsForCollection mealsForCollection;
     private ArrayList<Meal> collectionMealArrayList;
 
@@ -30,19 +30,27 @@ public class MyCollectionRecyclerViewAdapter extends RecyclerView.Adapter<MyRecy
 
     @NonNull
     @Override
-    public MyRecyclerViewHodler onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyCollectionRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(mealsForCollection.getBaseContext());
         View view = layoutInflater.inflate(R.layout.meal_layout,parent,false);
 
-        return new MyRecyclerViewHodler(view);
+        return new MyCollectionRecyclerViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyRecyclerViewHodler holder, final int position) {
+    public void onBindViewHolder(@NonNull MyCollectionRecyclerViewHolder holder, final int position) {
         holder.mMain.setText(collectionMealArrayList.get(position).getMain());
         holder.mSide.setText(collectionMealArrayList.get(position).getSide());
         holder.mDrink.setText(collectionMealArrayList.get(position).getDrink());
+
+        holder.mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addMealToCollectedDatabase(position);
+                deleteFromReadyToCollectDatabase(position);
+            }
+        });
 
     }
 
@@ -50,7 +58,7 @@ public class MyCollectionRecyclerViewAdapter extends RecyclerView.Adapter<MyRecy
     public int getItemCount() {
         return collectionMealArrayList.size();
     }
-    private void addMealToCollectionDatabase(int position){
+    private void addMealToCollectedDatabase(int position){
 
         Map<String,String> dataMap = new HashMap<>();
         dataMap.put("CustomerUniId",collectionMealArrayList.get(position).getUserName());
@@ -63,7 +71,7 @@ public class MyCollectionRecyclerViewAdapter extends RecyclerView.Adapter<MyRecy
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(mealsForCollection.getBaseContext(),"Added Succesfully",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mealsForCollection.getBaseContext(),"Added Successfully",Toast.LENGTH_SHORT).show();
                         mealsForCollection.loadDataFromFirebase();
                     }
                 })
@@ -75,14 +83,14 @@ public class MyCollectionRecyclerViewAdapter extends RecyclerView.Adapter<MyRecy
                     }
                 });
     }
-    private void deleteFromMealToPrepareDatabase(int position){
+    private void deleteFromReadyToCollectDatabase(int position){
         mealsForCollection.db.collection("ReadyToCollect")
                 .document(collectionMealArrayList.get(position).getUserName())
                 .delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(mealsForCollection.getBaseContext(),"Deleted Succesfully",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mealsForCollection.getBaseContext(),"Deleted Successfully",Toast.LENGTH_SHORT).show();
                         mealsForCollection.loadDataFromFirebase();
                     }
                 })

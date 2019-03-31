@@ -61,10 +61,10 @@ public class MealCollected extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         for(DocumentSnapshot querySnapshot: task.getResult()){
                             Meal meal = new Meal(
-                                    querySnapshot.getString("customerUniId"),
-                                    querySnapshot.getString("main"),
-                                    querySnapshot.getString("snack"),
-                                    querySnapshot.getString("drink"));
+                                    querySnapshot.getString("CustomerUniId"),
+                                    querySnapshot.getString("Main"),
+                                    querySnapshot.getString("Side"),
+                                    querySnapshot.getString("Drink"));
                             mealArrayList.add(meal);
                         }
                         adapter = new CollectedRecyclerViewAdapter(MealCollected.this,mealArrayList);

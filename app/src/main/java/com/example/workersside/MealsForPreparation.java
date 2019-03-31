@@ -64,8 +64,8 @@ public class MealsForPreparation extends AppCompatActivity {
                             Meal meal = new Meal(
                                     querySnapshot.getString("customerUniId"),
                                     querySnapshot.getString("main"),
-                                    querySnapshot.getString("snack"),
-                                    querySnapshot.getString("drink"));
+                                    querySnapshot.getString("drink"),
+                                    querySnapshot.getString("snack"));
                             mealArrayList.add(meal);
                         }
                         adapter = new MyRecyclerViewAdapter(MealsForPreparation.this,mealArrayList);
