@@ -95,6 +95,8 @@ public class MealsForCollection extends AppCompatActivity {
         }
     }
 
+    public ArrayList<Meal> getCollectionMealArrayList() {return collectionMealArrayList; }
+
 
     private void setUpFireBase() {
         db = FirebaseFirestore.getInstance();
