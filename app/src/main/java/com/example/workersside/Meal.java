@@ -1,15 +1,16 @@
 package com.example.workersside;
 
 public class Meal {
+    private String id;
         private  String main;
         private  String drink;
         private  String side;
         private String userName;
 
 
-        public Meal(String userName, String main, String drink,String side) {
+        public Meal(String id, String userName, String main, String drink,String side) {
+            setId(id);
             this.userName = userName;
-            //setUserId(userID);
             this.main = main;
             this.drink = drink;
             this.side = side;
@@ -17,7 +18,13 @@ public class Meal {
 
         }
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public void setMain(String main){
             this.main =main;

@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.content.ContentValues.TAG;
+
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHodler> {
 
     private MealsForPreparation mealsForPreparation;
@@ -65,27 +67,25 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
         dataMap.put("Drink",mealArrayList.get(position).getDrink());
         dataMap.put("Main",mealArrayList.get(position).getMain());
         dataMap.put("Side",mealArrayList.get(position).getSide());
-        mealsForPreparation.db.collection("ReadyToCollect")
+        mealsForPreparation.db.collection("ReadyToCollect").document(mealArrayList.get(position).getId())
 
-                .add(dataMap)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(mealsForPreparation.getBaseContext(),"Added Succesfully",Toast.LENGTH_SHORT).show();
-                mealsForPreparation.loadDataFromFirebase();
-            }
-        })
+                .set(dataMap)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                    }
+                })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(mealsForPreparation.getBaseContext(),"Unable to add --4--",Toast.LENGTH_SHORT).show();
-                        Log.v("--4--",e.getMessage());
+                        Log.w(TAG, "Error writing document", e);
                     }
                 });
     }
     private void deleteFromMealToPrepareDatabase(int position){
         mealsForPreparation.db.collection("orders")
-                .document(mealArrayList.get(position).getUserName())
+                .document(mealArrayList.get(position).getId())
                 .delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

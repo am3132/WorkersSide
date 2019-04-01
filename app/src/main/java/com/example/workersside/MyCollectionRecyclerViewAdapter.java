@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.content.ContentValues.TAG;
+
 public class MyCollectionRecyclerViewAdapter extends RecyclerView.Adapter<MyCollectionRecyclerViewHolder> {
     private MealsForCollection mealsForCollection;
     private ArrayList<Meal> collectionMealArrayList;
@@ -65,27 +67,25 @@ public class MyCollectionRecyclerViewAdapter extends RecyclerView.Adapter<MyColl
         dataMap.put("Drink",collectionMealArrayList.get(position).getDrink());
         dataMap.put("Main",collectionMealArrayList.get(position).getMain());
         dataMap.put("Side",collectionMealArrayList.get(position).getSide());
-        mealsForCollection.db.collection("Collected")
+        mealsForCollection.db.collection("Collected").document(collectionMealArrayList.get(position).getId())
 
-                .add(dataMap)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                .set(dataMap)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(mealsForCollection.getBaseContext(),"Added Successfully",Toast.LENGTH_SHORT).show();
-                        mealsForCollection.loadDataFromFirebase();
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully written!");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(mealsForCollection.getBaseContext(),"Unable to add --4--",Toast.LENGTH_SHORT).show();
-                        Log.v("--4--",e.getMessage());
+                        Log.w(TAG, "Error writing document", e);
                     }
                 });
     }
     private void deleteFromReadyToCollectDatabase(int position){
         mealsForCollection.db.collection("ReadyToCollect")
-                .document(collectionMealArrayList.get(position).getUserName())
+                .document(collectionMealArrayList.get(position).getId())
                 .delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
