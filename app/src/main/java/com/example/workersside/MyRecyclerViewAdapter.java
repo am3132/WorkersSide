@@ -63,10 +63,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewHo
     private void addMealToCollectionDatabase(int position){
 
         Map<String,String> dataMap = new HashMap<>();
-        dataMap.put("CustomerUniId",mealArrayList.get(position).getUserName());
-        dataMap.put("Drink",mealArrayList.get(position).getDrink());
-        dataMap.put("Main",mealArrayList.get(position).getMain());
-        dataMap.put("Side",mealArrayList.get(position).getSide());
+        dataMap.put("customerUniId",mealArrayList.get(position).getUserName());
+        dataMap.put("drink",mealArrayList.get(position).getDrink());
+        dataMap.put("main",mealArrayList.get(position).getMain());
+        dataMap.put("snack",mealArrayList.get(position).getSide());
         mealsForPreparation.db.collection("ReadyToCollect").document(mealArrayList.get(position).getId())
 
                 .set(dataMap)
